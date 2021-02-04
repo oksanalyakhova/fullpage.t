@@ -1,0 +1,23 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% set description = "This is a test page for Fullpage transitions" %}
+{% set title = "Fullpage" %}
+{% set main = "main" %}
+
+{% block content %}
+
+  {% import "helpers/_section.html" as section %}
+  {{ section.sectionContent("ninja", "The Teenage Mutant Ninja Turtles (often shortened to the TMNT or Ninja Turtles) are four fictional teenaged superhero anthropomorphic mutant turtles. Named after Italian Renaissance artists, they were trained by their anthropomorphic rat sensei in the Japanese martial art of ninjutsu. From their home in the sewers of New York City, they battle petty criminals, evil overlords, mutated creatures, and alien invaders while attempting to remain hidden from society. They were created by Kevin Eastman and Peter Laird.") }}
+
+  {{ section.sectionContent("leonardo", "Leonardo, nicknamed Leo, is a fictional superhero and one of the four main characters in the Teenage Mutant Ninja Turtles comics and related media. He is often depicted wearing a blue bandanna. His signature weapons are two Ninjatos, commonly confused as Katanas. Leonardo is the eldest brother and the leader of the group. He is the most skilled, the most serious, the most spiritual, the most disciplined and the most in-line with Splinter's teachings and thoughts.") }}
+
+  {{ section.sectionContent("raphael", "Raphael, nicknamed Raph, is a fictional superhero and one of the four main characters of the Teenage Mutant Ninja Turtles comics and all related media and second oldest/mid-middle-child of the turtle brothers. He is usually depicted wearing a red eye mask; in this regard he is the only turtle to retain the color in all media, whereas the others each received a different color. Raphael wields twin sai, the points of which are usually sharpened, as his primary weapon. Raphael is most famous for his temperamental personality, being short-tempered, aggressive, sullen, maddened, and rebellious.") }}
+
+  {{ section.sectionContent("michelangelo", "Michelangelo, nicknamed Mike or Mikey, is a fictional superhero and one of the four main characters of the Teenage Mutant Ninja Turtles comics and all related media. He is usually depicted wearing an orange eye mask. His signature weapons are dual nunchaku, though he has also been portrayed using other weapons, such as a grappling hook, manriki-gusari, tonfa, and a three-section staff (in some action figures). Michaelangelo is the most naturally skilled of his four brothers, but prefers to have a good time rather than train. The youngest of the group he is shown to be rather immature, he is known for his wise-cracks, love of skateboarding, witty optimism and like his brothers love of pizza.") }}
+
+  {{ section.sectionContent("donatello", "Donatello, nicknamed Don or Donnie, is a fictional superhero and one of the four main characters of the Teenage Mutant Ninja Turtles comics and all related media. He is co-creator Peter Laird's favorite Turtle. In the original comics, all four of the Turtles wear red masks. In the animated cartoons, he dons a purple mask. The creators gave all four turtles different mask colors, in order to tell them apart. He is usually depicted wearing a purple eye mask. His primary signature weapon are his (2) effective bō staffs. In all media, he is the smartest of the four turtles. He is listed as 4 feet (1.2 m) in height on the original action figure release.") }}
+
+{% endblock %}

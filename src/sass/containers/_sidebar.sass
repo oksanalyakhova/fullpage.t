@@ -1,0 +1,45 @@
+.sidebar
+  position: fixed
+  top: 50%
+  right: 1.25rem
+  z-index: 99
+  transform: translateY(-50%)
+  .line
+    position: absolute
+    left: 50%
+    width: 2px
+    height: 30px
+    background-color: $evenBg
+    transform: translateX(-50%)
+    +r(1280)
+      width: 3px
+      height: 45px
+    &_top
+      bottom: 100%
+    &_bottom
+      top: 100%
+  &-nav
+    padding: 16px 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    & > * + *
+      margin: 5px 0 0
+      +r(768)
+        margin: 15px 0 0
+    &__link
+      display: block
+      width: 8px
+      height: 8px
+      background-color: $evenBg
+      border: 1px solid $evenBg
+      border-radius: 50%
+      transform: scale(1)
+      +trans(all)
+      &.is-active
+        transform: scale(1.2)
+        background-color: transparent
+        pointer-events: none
+        +r(768)
+          transform: scale(1.7)

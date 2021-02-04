@@ -1,0 +1,10 @@
+<div id="sidebar" class="sidebar">
+  <div class="line line_top"></div>
+  <div class="line line_bottom"></div>
+  {% import "../data/data.html" as nav %}
+  {% for item in nav.siteNav %}
+  {% if loop.first %}<div class="sidebar-nav">{% endif %}
+  <a class="sidebar-nav__link" data-href="{{ item.navTrigger }}"></a>
+  {% if loop.last %}</div>{% endif %}
+  {% endfor %}
+</div>

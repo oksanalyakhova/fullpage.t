@@ -1,0 +1,18 @@
+{% macro sectionContent(selector, sectionText) %}
+<section id="{{ selector }}" class="section section_{{ selector }} {{ selector }}">
+  <div class="container">
+    <div class="section__wrapper {{ selector }}__wrapper">
+      <div class="section__content {{ selector }}__content">
+        <div class="img-wrap">
+          <img src="./img/{{ selector }}.jpg" alt="{{ selector }}-image">
+        </div>
+        <div class="text-wrap">
+          <p>
+            {{ sectionText }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endmacro %}

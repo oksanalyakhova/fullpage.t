@@ -1,0 +1,16 @@
+<header id="header" class="header">
+  <div class="container">
+    <div class="header__wrapper">
+      <nav class="header__nav" aria-label="Site navigation">
+        {% import "../data/data.html" as nav %}
+        {% for item in nav.siteNav %}
+        {% if loop.first %}<div class="header-nav">{% endif %}
+        <a class="header-nav__link" data-href="{{ item.navTrigger }}">
+          <span>{{ item.navLabel }}</span>
+        </a>
+        {% if loop.last %}</div>{% endif %}
+        {% endfor %}
+      </nav>
+    </div>
+  </div>
+</header>

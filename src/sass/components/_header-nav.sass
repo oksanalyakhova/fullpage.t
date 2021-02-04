@@ -1,0 +1,48 @@
+.header-nav
+  +r(768)
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    & > * + *
+      margin: 0 0 0 20px
+      +r(1280)
+        margin: 0 0 0 60px
+  &__link
+    width: fit-content
+    font-family: $rubic
+    +fs(10)
+    line-height: 1.6
+    letter-spacing: 0.07em
+    text-transform: uppercase
+    text-shadow: 1px 1px 2px $bg
+    pointer-events: all
+    +r(768)
+      padding: 20px 0
+    +r(1280)
+      +fs(12)
+    &.is-active,
+    &:hover
+      span
+        &::before
+          transform: scaleX(1)
+          transform-origin: left center
+    &.is-active
+      pointer-events: none
+    span
+      padding-left: 12px
+      display: block
+      position: relative
+      white-space: nowrap
+      +pseudo
+      &::before
+        top: auto
+        bottom: 0
+        width: 20px
+        height: 2px
+        background-color: $oddBg
+        transform: scaleX(0)
+        transform-origin: right center
+        +trans(transform)
+        +r(1280)
+          height: 3px

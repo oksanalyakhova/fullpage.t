@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="{{ description }}">
+  <title>{{ title }}</title>
+  <!-- css -->
+  {% block addcss %}{% endblock %}
+  <link type="text/css" rel="stylesheet" href="./css/app.css">
+</head>
+<style>
+  body {opacity: 0;}
+</style>
+<body>
+
+<div id="out" class="out">
+  <!-- BEGIN header -->
+  {% include "partials/_header.html" %}
+  <!-- END header -->
+  <!-- BEGIN sidebar -->
+  {% include "partials/_sidebar.html" %}
+  <!-- END sidebar -->
+  <!-- BEGIN content -->
+  <main class="{{ main }}">
+    {% block content %}{% endblock %}
+  </main>
+  <!-- END content -->
+</div>
+
+<!-- BEGIN scripts -->
+{% block addjs %}{% endblock %}
+<script src="./js/app.js" async></script>
+<!-- END scripts -->
+
+</body>
+</html>
