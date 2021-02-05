@@ -4,14 +4,23 @@ let wheeling;
 
 class FullPageScroll {
   constructor(config) {
-    this.duration = config.duration || 1000;
     this.DOM = {body: document.querySelector('body')};
+    this.content = this.DOM.body.querySelector('.out');
     this.main = this.DOM.body.querySelector('#main');
+    this.sidebar = this.DOM.body.querySelector('.sidebar')
     this.headerLinks = [...this.DOM.body.querySelectorAll('.header-nav__link')];
     this.sidebarLinks = [...this.DOM.body.querySelectorAll('.sidebar-nav__link')];
     this.sections = [...this.DOM.body.querySelectorAll('.section')];
     this.sectionHeight = this.DOM.body.querySelector('main').clientHeight;
     this.ninja = this.DOM.body.querySelector('.ninja-helper');
+    this.duration = config.duration || 1000;
+    this.navigation = config.navigation || false;
+
+    if (this.navigation) {
+      this.content.appendChild(this.sidebar)
+    } else {
+      this.content.removeChild(this.sidebar)
+    }
   }
 
   initEvents() {
@@ -85,6 +94,7 @@ class FullPageScroll {
       this.sidebarLinks[index].classList.add('is-active');
     } else {
       this.headerLinks[index].classList.add('is-active');
+      this.dispatchEvent({type: 'click', listeners: thisItems});
     }
   }
 
@@ -191,12 +201,10 @@ class FullPageScroll {
 const fullpage = new FullPageScroll({
   // change duration
   duration: 800,
+  // show sidebar nav
+  navigation: true
 });
-
 fullpage.initEvents();
-
-// change duration
-fullpage.duration = 1000;
 
 // on start
 fullpage.on( 'start', () => {
