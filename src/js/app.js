@@ -218,3 +218,8 @@ fullpage.on( 'end', () => {
 
 // go to some section
 fullpage.goTo(2);
+
+// click on sidebar nav
+fullpage.on('click', () => {
+  fullpage.duration = 1500;
+})
