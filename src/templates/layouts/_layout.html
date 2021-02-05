@@ -23,7 +23,10 @@
   {% include "partials/_sidebar.html" %}
   <!-- END sidebar -->
   <!-- BEGIN content -->
-  <main class="{{ main }}">
+  <div class="ninja-helper">
+    <img src="./img/ninja.gif" alt="ninja">
+  </div>
+  <main id="{{ main }}" class="{{ main }}">
     {% block content %}{% endblock %}
   </main>
   <!-- END content -->

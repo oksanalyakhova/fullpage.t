@@ -1,11 +1,11 @@
 @mixin fontface($name, $file, $weight: normal, $style: normal)
-  @font-face
-    font-family: "#{$name}"
-    src: url("../fonts/#{$file}.eot")
-    src: url("../fonts/#{$file}.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/#{$file}.woff") format("PTAstraSans-Boldwoff"),
-    url("../fonts/#{$file}.woff2") format("woff2"),
-    url("../fonts/#{$file}.ttf") format("truetype")
-    font-style: $style
-    font-weight: $weight
-    font-display: auto
+	@font-face
+		font-family: "#{$name}"
+		src: url("../fonts/#{$file}.eot")
+		src: url("../fonts/#{$file}.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/#{$file}.woff") format("PTAstraSans-Boldwoff"),
+		url("../fonts/#{$file}.woff2") format("woff2"),
+		url("../fonts/#{$file}.ttf") format("truetype")
+		font-style: $style
+		font-weight: $weight
+		font-display: auto
