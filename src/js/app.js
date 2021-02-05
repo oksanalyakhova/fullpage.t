@@ -193,7 +193,7 @@ class FullPageScroll {
   }
 
   goTo(number) {
-    this.sidebarLinks[number - 1].click();
+    this.headerLinks[number - 1].click();
   }
 }
 
