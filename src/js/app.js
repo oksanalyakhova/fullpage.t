@@ -78,7 +78,7 @@ class FullPageScroll {
         setTimeout(() => this.dispatchEvent({type: 'end'}), this.duration);
       });
 
-      if (index === 0) item.classList.add('is-active');
+      if (index < 1) item.classList.add('is-active');
     }, this);
   }
 
@@ -119,7 +119,7 @@ class FullPageScroll {
     const thisEl = el;
 
     thisEl.style.transform = `translateY(${this.sectionHeight * index}px)`;
-    if (index === 0) thisEl.classList.add('in-viewport');
+    if (index < 1) thisEl.classList.add('in-viewport');
   }
 
   changeStyles(active) {
@@ -217,7 +217,7 @@ fullpage.on( 'end', () => {
 });
 
 // go to some section
-fullpage.goTo(2);
+// fullpage.goTo(2);
 
 // click on sidebar nav
 fullpage.on('click', () => {
