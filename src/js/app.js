@@ -29,6 +29,7 @@ class FullPageScroll {
     this.siteNav();
     this.onMouseWheel();
     this.onTouchMove();
+    this.goTo(1);
   }
 
   on(type, listener) {
@@ -77,8 +78,6 @@ class FullPageScroll {
         this.dispatchEvent({type: 'start'});
         setTimeout(() => this.dispatchEvent({type: 'end'}), this.duration);
       });
-
-      if (index < 1) item.classList.add('is-active');
     }, this);
   }
 
@@ -94,7 +93,6 @@ class FullPageScroll {
       this.sidebarLinks[index].classList.add('is-active');
     } else {
       this.headerLinks[index].classList.add('is-active');
-      this.dispatchEvent({type: 'click', listeners: thisItems});
     }
   }
 
@@ -117,9 +115,7 @@ class FullPageScroll {
 
   setStylesProps(el, index) {
     const thisEl = el;
-
     thisEl.style.transform = `translateY(${this.sectionHeight * index}px)`;
-    if (index < 1) thisEl.classList.add('in-viewport');
   }
 
   changeStyles(active) {
@@ -136,7 +132,7 @@ class FullPageScroll {
   }
 
   onMouseWheel() {
-    this.main.addEventListener('mousewheel', (e) => {
+    this.main.addEventListener('wheel', (e) => {
       if (!wheeling) this.onMoveProps(e, e.deltaY > 0);
     }, false);
   }
@@ -162,10 +158,11 @@ class FullPageScroll {
     } else {
       this.toSection(prevSection, sectionInViewport);
     }
+
     clearTimeout(wheeling);
     wheeling = setTimeout(() => {
       wheeling = undefined;
-    }, this.duration / 3);
+    }, this.duration * 1.5);
   }
 
   toSection(another, visible) {
@@ -218,8 +215,3 @@ fullpage.on( 'end', () => {
 
 // go to some section
 // fullpage.goTo(2);
-
-// click on sidebar nav
-fullpage.on('click', () => {
-  fullpage.duration = 1500;
-})
